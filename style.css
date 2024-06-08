@@ -332,13 +332,21 @@ nav{
     font-size: 22px;
     transition: .2s ease-in-out;    
 }
-.hoveredm, .newhovered:hover{
+.newhovered:hover{
     background-color: #090909;
     color: var(--color);
     transition: 0.2s ease-in-out;
     cursor: pointer;
     
-}/*---------------------------------------------------------------*/
+}
+.hoveredm:hover{
+    background-color: #090909;
+    color: var(--color);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    
+}
+/*---------------------------------------------------------------*/
 .prodimg{
     width: 95%;
     height: 275px;
