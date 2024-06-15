@@ -32,17 +32,5 @@ links.forEach(function(element) {
     })
 })
 
-function home(n){
-  window.location.href = n;
-}
-
-const numberInput = document.getElementById('numberInput');
-
-        numberInput.addEventListener('input', function(event) {
-            let value = event.target.value.replace(/\D/g, ''); // Remove non-digit characters
-            value = value.replace(/(\d)(?=(\d{3})+$)/g, '$1 '); // Add space every 3 digits
-
-            event.target.value = value;
-        });
 
 
