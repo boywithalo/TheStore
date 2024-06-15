@@ -16,7 +16,7 @@
         
     </div>
     <header>
-        <h1 onclick="home()" style="cursor:pointer">TheStore <svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <h1 onclick="run('../index.html')" style="cursor:pointer">TheStore <svg width="28" height="16" viewBox="0 0 28 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M27.7071 8.70711C28.0976 8.31658 28.0976 7.68342 27.7071 7.29289L21.3431 0.928932C20.9526 0.538408 20.3195 0.538408 19.9289 0.928932C19.5384 1.31946 19.5384 1.95262 19.9289 2.34315L25.5858 8L19.9289 13.6569C19.5384 14.0474 19.5384 14.6805 19.9289 15.0711C20.3195 15.4616 20.9526 15.4616 21.3431 15.0711L27.7071 8.70711ZM0 9H27V7L0 7L0 9Z" fill="#04E762"/>
             </svg> Order</h1>
         
@@ -38,9 +38,9 @@
         </div>
              <nav>
             <a href="catalogue/products.html" class="hoveredm">Store</a>
-            <a href="" class="hoveredm">Track</a>
-            <a href="" class="hoveredm">Manage</a>
-            <a href="" class="hoveredm">More</a>
+            <a href="../404.html" class="hoveredm">Manage</a>
+            <a href="../404.html" class="hoveredm">Track</a>
+            <a href="../404.html" class="hoveredm">More</a>
         </nav>
     </header>
     <main>
@@ -55,7 +55,8 @@
 
                 <section class="orderwrite">
                     <h1 class="deth1">Order Details</h1>
-                    <form action="">
+                    <div class="center"><button class="betabtn">Switch to the old version</button></div>
+                    <form action="" style="display: none;" class='orderform'>
                         <label class="fullname">Full Name<b style="color: red;">*</b></label>
                         <br><br><input type="text" name="FirstName" class="FirstName orderdet" placeholder="First Name" autocomplete="off" required minlength="2" style="margin-left: 5%;">
                         <input type="text" name="SecondName" class="SecondName orderdet" placeholder="Second Name" autocomplete="off" required minlength="2" style="margin-left: 10px;">
@@ -79,18 +80,18 @@
                             Order Total: 49.99USD
                         </h1>
                         <h1 class="terms">By submitting this order, you acknowledge and agree to <a href="https://youtu.be/dQw4w9WgXcQ?si=rH7J5erb4nP5eYwk">our Terms and Conditions.</a> Additionally, you confirm that the information provided is accurate and complete.</h1>
-                        <div class="center"><input type="reset" value="Submit Order →" class="submit btn" onclick="chip()"></div>
+                        <div class="center"><input type="reset" value="Submit Order →" class="submit btn" onclick="run('orderconfirmed.html')"></div>
 
 
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdqW1GdRIFtbvQcWcyTORlSNTmOO6KKUizxru9VRZj_J_g0jQ/viewform?embedded=true" width="640" height="676" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                        
                          
-                    </form>
+                    </form><iframe class="iframeform" src="https://docs.google.com/forms/d/e/1FAIpQLSdqW1GdRIFtbvQcWcyTORlSNTmOO6KKUizxru9VRZj_J_g0jQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                 </section>
 
 
                 <div class="order-card">
                     <div class="product-card">
-                        <img src="../photo.png" alt="Product Image">
+                        <img src="../pexels-rizknas-1463375-2835562.jpg" alt="Product Image">
                         <div class="product-info">
                             <h1>Azure Midnight</h1>
                             <p>Everlasting charm.<br>Renewed with each dawn.</p>
@@ -233,7 +234,7 @@
             for (let i = 0; i < inputs.length; i++) {
                 input_values.push(inputs[i].value);
                 console.log(input_values[i])
-                alert(input_values[i])
+                
                 const information =+ input_values[i]
           
             }
@@ -242,6 +243,33 @@
           let h1 = document.querySelector(".output")
           let button = document.querySelector('.btn');
           button.addEventListener('click', handle)</script>
-          
+         <script>
+            
+            let newver = true;
+
+            function beta() {
+                let betabtn = document.querySelector('.betabtn');
+                let form = document.querySelector('.orderform');
+                let iframe = document.querySelector('.iframeform');
+
+                if (newver) {
+                    betabtn.innerHTML = 'Switch to the new version';
+                    form.style.display = 'block';
+                    iframe.style.display = 'none';
+                } else {
+                    betabtn.innerHTML = 'Switch to the old version';
+                    form.style.display = 'none';
+                    iframe.style.display = 'block';
+                }
+
+                newver = !newver; 
+            }
+
+            document.querySelector('.betabtn').addEventListener('click', beta);
+
+         </script> 
+         <script>
+            
+         </script>
 </body>
 </html>
